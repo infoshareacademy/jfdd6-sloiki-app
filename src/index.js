@@ -9,11 +9,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import App from './components/app'
-import GamesListView from './components/games-list/games-list-view'
-import GameProfileView from './components/game-profile/game-profile-view'
+import GamesListView from './components/games-list-view/games-list-view'
+import GameProfileView from './components/game-profile-view/game-profile-view'
 
-import UsersListView from './components/users-list/users-list-view'
-import UserProfileView from './components/user-profile/user-profile-view'
+import UsersListView from './components/users-list-view/users-list-view'
+import UserProfileView from './components/user-profile-view/user-profile-view'
 
 
 ReactDOM.render(
@@ -24,7 +24,7 @@ ReactDOM.render(
           <Route path="/games-list" component={GamesListView}/>
           <Route path="/game-profile/:id" component={GameProfileView}/>
           <Route path="/users-list" component={UsersListView}/>
-          <Route path="/user-profile/:id" component={UserProfileView}/>
+          <Route path="/user-profile/:userId" component={UserProfileView}/>
         </Route>
       </Router>
     </Provider>

@@ -2,10 +2,10 @@ const FETCH__BEGIN = 'games/FETCH__BEGIN'
 const FETCH__SUCCESS = 'games/FETCH__SUCCESS'
 const FETCH__FAIL = 'games/FETCH__FAILED'
 
-const SET = 'game-list/SET'
+const SEARCH = 'game-list/SEARCH'
 
-export const set = (value) => ({
-  type: SET,
+export const search = (value) => ({
+  type: SEARCH,
   value
 })
 
@@ -66,7 +66,7 @@ export default (state = initialState, action = {}) => {
         fetching: false,
         error: action.error
       }
-    case SET:
+    case SEARCH:
       return {
         ...state,
         searchString: action.value

@@ -1,5 +1,6 @@
 import React from 'react'
-import {connect} from 'react-redux'
+//import { Link } from 'react-router'
+import { connect } from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 import {Tabs, Tab} from 'react-bootstrap-tabs';
 
@@ -17,15 +18,20 @@ export default connect(
   class UserProfileView extends React.Component {
     render() {
       const {
-        users,
-        params
+        params,
+        users
       } = this.props
 
       const currentUser =
         users.data ?
           users.data.find(
-            user => user.id === parseInt(params.id, 10))
-          : <p>Waiting for games data..</p>
+            user => user.id === parseInt(params.userId, 10)
+          ) : null
+
+      if (currentUser === null) {
+        return <p>Waiting for users data...</p>
+      }
+
 
       return (
         <Grid>
@@ -33,7 +39,10 @@ export default connect(
           <Row>
             <Col xs={12} sm={4} md={4}>
               <div key={currentUser.id}>
-                <img src={process.env.PUBLIC_URL + currentUser.picture}/>
+                <img
+                  src={process.env.PUBLIC_URL + currentUser.picture}
+                  alt={"Awatar użytkownika " + currentUser.name}
+                />
               </div>
             </Col>
 
@@ -80,9 +89,7 @@ export default connect(
           </Row>
         </Grid>
       )
-
     }
-
   }
 )
 

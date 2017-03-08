@@ -25,7 +25,7 @@ export default connect(
         games.data ?
           games.data.find(
             game => game.id === parseInt(params.id, 10))
-          : <p>Waiting for games data..</p>
+          : <p>Waiting for games data...</p>
 
       const prevGame = (
         (currentGame.id > 1) ? (currentGame.id - 1) : (currentGame.id)
