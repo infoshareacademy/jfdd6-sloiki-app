@@ -33,11 +33,11 @@ export default connect(
 
     render() {
       return (
-        <Grid>
+        <div>
+          <Col xs={4}>
           <h1>Rejestracja</h1>
           <Row>
-            <Col xs={12} sm={6} md={6}>
-              <form onSubmit={(event) => {
+            <form onSubmit={(event) => {
                 event.preventDefault()
                 this.props.register(this.state)
               }}>
@@ -84,19 +84,19 @@ export default connect(
                     }}
                   />
 
-                  <HelpBlock>Tekst pomocniczy do ew. wykorzystania</HelpBlock>
                 </FormGroup>
 
                 <Button
                   type="submit"
-                  bsStyle="danger"
+                  bsStyle="button"
                 >
                   Zarejstruj się
                 </Button>
               </form>
-            </Col>
+
           </Row>
-        </Grid>
+            </Col>
+          </div>
       )
     }
   }

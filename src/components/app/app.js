@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {Grid, Col} from 'react-bootstrap'
+import {Grid, Tabs, Tab,Col, Row} from 'react-bootstrap'
 
 import Nav from '../nav/nav'
 import LoginView from '../login-view'
@@ -34,20 +34,32 @@ class App extends React.Component {
     ) :
       (
         <Grid>
-          <div className="enter">
-          <img src={process.env.PUBLIC_URL + '/img/pozyczme-logo-blue2.svg'}
-               alt="Logo PożyczME"/>
-          <h1>Witamy na naszej stronie</h1>
-</div>
-          <Col lg={6}>
-            <RegistrationView/>
-          </Col>
 
-          <Col lg={6}>
-            <LoginView />
-          </Col>
+            <Col xs={5} className = "col-centered" >
+              <img src={process.env.PUBLIC_URL + '/img/pozyczme-logo-blue2.svg'}
+                   alt="Logo PożyczME"/>
+            <h1 className="tittle">Witamy na naszej stronie</h1>
+
+
+          <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" >
+            <Tab eventKey={1} title="Logowanie"><LoginView /></Tab>
+            <Tab eventKey={2} title="Rejstracja"><RegistrationView/></Tab>
+          </Tabs>
+
+
+
+              </Col>
 
         </Grid>
+
+
+
+
+
+
+
+
+
       )
   }
 }

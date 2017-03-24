@@ -30,14 +30,15 @@ export default connect(
 
     render() {
       return (
-        <Grid>
-          <h1>Zaloguj się</h1>
+          <div>
+          <Col xs={4}>
           <Row>
-            <Col xs={12} sm={6} md={6}>
-              <form onSubmit={(event) => {
+
+            <form className="login" onSubmit={(event) => {
                 event.preventDefault()
                 this.props.logIn(this.state.username, this.state.password)
               }}>
+              <h1 className="h1login">Zaloguj się</h1>
                 <FormGroup>
                   <ControlLabel>
                     <label htmlFor="username">Nazwa użytkownika</label>
@@ -66,19 +67,19 @@ export default connect(
                       this.setState({password: event.target.value})
                     }}
                   />
-                  <HelpBlock>Tekst pomocniczy do ew. wykorzystania</HelpBlock>
                 </FormGroup>
 
                 <Button
                   type="submit"
-                  bsStyle="primary"
+                  bsStyle="button"
                 >
                   Zaloguj
                 </Button>
               </form>
-            </Col>
+
           </Row>
-        </Grid>
+            </Col>
+          </div>
       )
     }
   }
