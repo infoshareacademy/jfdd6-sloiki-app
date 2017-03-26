@@ -1,5 +1,11 @@
 const RANGE = 'game-list/RANGE'
+const RESET = 'game-list/RESET'
 export const SET_MIN_MAX_LABEL = 'game-list/SET_MIN_MAX_LABEL'
+
+export const reset = (value) => ({
+  type: RESET,
+  value
+})
 
 export const range = (value) => ({
   type: RANGE,
@@ -17,6 +23,10 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case RESET:
+      return {
+        ...initialState
+      }
     case RANGE:
       return {
         ...state,
